@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('/produits', [ProductController::class, 'index']);
+Route::get('/produits/12-iphone-xs', [ProductController::class, 'show($product)']);
+
+Route::get('/categories/12-smartphone', [CategoryController::class, 'show($category)']);
+
+Route::get('/contact', [ContactController::class, 'index']);
