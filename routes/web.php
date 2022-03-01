@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +20,11 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/produits', [ProductController::class, 'index']);
-Route::get('/produits/12-iphone-xs', [ProductController::class, 'show($product)']);
+Route::controller(ProductController::class)->group(function () {
+    Route::get('/produits', 'index');
+    Route::get('/produits/12-iphone-xs', 'show($product');
+});
 
-Route::get('/categories/12-smartphone', [CategoryController::class, 'show($category)']);
+Route::get('/categories/12-smartphone', [CategoryController::class, 'show']);
 
 Route::get('/contact', [ContactController::class, 'index']);
