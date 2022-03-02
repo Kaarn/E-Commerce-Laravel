@@ -1,9 +1,10 @@
-@extends('layout.base')
+@extends('layouts.base')
 
 @section('content')
+
 <section class="jumbotron text-center">
     <div class="container">
-        <h1 class="jumbotron-heading">Produit</h1>
+        <h1 class="jumbotron-heading">{{ $product->name }}</h1>
         <p class="lead text-muted mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro commodi aliquam veniam fuga suscipit itaque labore natus accusamus numquam, perferendis in? Incidunt libero dignissimos unde fuga voluptatem omnis accusamus delectus.</p>
     </div>
 </section>
@@ -14,7 +15,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/">Accueil</a></li>
-                    <li class="breadcrumb-item"><a href="categories/category">Catégorie</a></li>
+                    <li class="breadcrumb-item"><a href="category">Catégorie</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Produit</li>
                 </ol>
             </nav>
@@ -28,7 +29,7 @@
         <div class="col-12 col-lg-6">
             <div class="card bg-light mb-3">
                 <div class="card-body">
-                    <a href="" data-toggle="modal" data-target="#productModal">
+                    <a href="" data-bs-toggle="modal" data-bs-target="#productModal">
                         <img class="img-fluid" src="https://dummyimage.com/800x800/55595c/fff" />
                         <p class="text-center">Zoom</p>
                     </a>
@@ -40,9 +41,9 @@
         <div class="col-12 col-lg-6 add_to_cart_block">
             <div class="card bg-light mb-3">
                 <div class="card-body">
-                    <p class="price">99,00 &euro;</p>
-                    <p class="price_discounted">149.90 &euro;</p>
-                    <form method="get" action="cart.html">
+                    <p class="price">{{ $product->prix }} &euro;</p>
+                    <p class="price_discounted"> &euro;</p>
+                    <form method="get" action="cart">
                         <div class="mb-3">
                             <label for="colors">Couleur</label>
                             <select class="form-select" id="colors">
@@ -68,7 +69,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="cart.html" class="btn btn-success btn-lg w-100 text-uppercase">
+                        <a href="cart" class="btn btn-success btn-lg w-100 text-uppercase">
                             <i class="fa fa-shopping-cart"></i> Ajouter
                         </a>
                     </form>
@@ -177,47 +178,25 @@
         </div>
     </div>
 </div>
-@endsection
+
 <!-- Modal image -->
 <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="productModalLabel">Produit</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <img class="img-fluid" src="https://dummyimage.com/1200x1200/55595c/fff" />
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-        </div>
+    <div class="modal-content">
+    <div class="modal-header">
+    <h5 class="modal-title" id="productModalLabel">Produit</h5>
+    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
     </div>
-</div>
+    <div class="modal-body">
+    <img class="img-fluid" src="https://dummyimage.com/1200x1200/55595c/fff" />
+    </div>
+    <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+    </div>
+    </div>
+    </div>
+   </div>
 
-<!-- JS -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript">
-    //Plus & Minus for Quantity product
-    $(document).ready(function(){
-        var quantity = 1;
-
-        $('.quantity-right-plus').click(function(e){
-            e.preventDefault();
-            var quantity = parseInt($('#quantity').val());
-            $('#quantity').val(quantity + 1);
-        });
-
-        $('.quantity-left-minus').click(function(e){
-            e.preventDefault();
-            var quantity = parseInt($('#quantity').val());
-            if(quantity > 1){
-                $('#quantity').val(quantity - 1);
-            }
-        });
-    });
-</script>
+@endsection

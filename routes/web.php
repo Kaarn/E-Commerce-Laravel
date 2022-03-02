@@ -1,9 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProductController;
+use App\Models\Category;
+use App\Models\Product;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,14 +19,18 @@ use App\Http\Controllers\ContactController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('/', [
+    'bestproduct' => Product::where('favorite', 1)->inRandomOrder()->first(),
+    'randomProducts' => Product::InRandomOrder()->limit(3)->get(),
+    'products'=> Product::latest()->limit(4)->get(),
+    ]);
 });
 
-Route::controller(ProductController::class)->group(function () {
-    Route::get('/produits', 'index');
-    Route::get('/produits/12-iphone-xs', 'show($product');
-});
+Route::get('/produits', [ProductController::class, 'index']);
+Route::get('/produits/product/{product}', [ProductController::class, 'show']);
 
-Route::get('/categories/12-smartphone', [CategoryController::class, 'show']);
+//Route::get('/', [ProductController::class, 'latest']);
+
+Route::get('/categories/{category}', [CategoryController::class, 'show']);
 
 Route::get('/contact', [ContactController::class, 'index']);

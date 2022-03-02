@@ -4,18 +4,18 @@
     <!-- Site meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Amazon</title>
+    <title> {{ config('app.name') }} </title>
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css">>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="/">Amazon</a>
+        <a class="navbar-brand" href="/">{{ config('app.name') }}</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,10 +29,7 @@
                     <a class="nav-link" href="/produits">Produits</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/categories">Catégories</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/contact">Contact</a>
+                    <a class="nav-link" href="contact">Contact</a>
                 </li>
             </ul>
 
@@ -45,7 +42,7 @@
                         </button>
                     </div>
                 </div>
-                <a class="btn btn-success btn-sm ms-3 d-inline-flex align-items-center" href="cart.html">
+                <a class="btn btn-success btn-sm ms-3 d-inline-flex align-items-center" href="cart">
                     <i class="fa fa-shopping-cart me-2"></i> Panier
                     <span class="badge badge-light">3</span>
                 </a>
@@ -89,7 +86,7 @@
             </div>
 
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto">
-                <h5>Others links</h5>
+                <h5>Autre Liens</h5>
                 <hr class="bg-white mb-2 mt-0 d-inline-block mx-auto w-25">
                 <ul class="list-unstyled">
                     <li><a href="">Link 1</a></li>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 
@@ -10,7 +11,10 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return view('produits.products');
+        return view('produits.products', [
+            'products' => Product::latest()->paginate(4),
+            'lastproduct' => Product::latest()->first(),
+        ]);
     }
 
     /**
@@ -40,9 +44,11 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($product)
+    public function show(Product $product)
     {
-        return view('produits.show');
+        return view('produits/product', [
+            'product' => $product
+        ]);
     }
 
     /**
@@ -77,5 +83,12 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function latest() 
+    {
+        return view('index', [
+            'products' => Product::latest(3),
+        ]);
     }
 }
