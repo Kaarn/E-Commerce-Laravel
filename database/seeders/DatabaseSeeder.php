@@ -21,13 +21,14 @@ class DatabaseSeeder extends Seeder
     {
         $this->faker = Faker::create();
 
-        for ($i=0; $i < 10; $i++)
+        for ($i=0; $i < 20; $i++)
         DB::table('products')->insert([
             'name' => $this->faker->word(4),
             'description' => $this->faker->text(150),
             'price' => rand(1, 2000),
             'slug' => $this->faker->slug(1),
             'favorite' => $this->faker->boolean(),
+            'color' => rand(0, 3),
             'cover' => $this->faker->imageUrl(),
             'created_at' => now(),
             'updated_at' => now(),

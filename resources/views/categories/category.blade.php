@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('layout.base')
 
 @section('content')
 
@@ -14,8 +14,8 @@
         <div class="col">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index">Accueil</a></li>
-                    <li class="breadcrumb-item"><a href="category">Catégorie</a></li>
+                    <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+                    <li class="breadcrumb-item"><a href="categories/category">Catégorie</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Sous catégorie</li>
                 </ol>
             </nav>

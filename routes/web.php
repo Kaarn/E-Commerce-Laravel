@@ -27,10 +27,9 @@ Route::get('/', function () {
 });
 
 Route::get('/produits', [ProductController::class, 'index']);
-Route::get('/produits/product/{product}', [ProductController::class, 'show']);
+Route::get('/produits/{product}', [ProductController::class, 'show']);
 
-//Route::get('/', [ProductController::class, 'latest']);
 
-Route::get('/categories/{category}', [CategoryController::class, 'show']);
+Route::get('/categories/category', [CategoryController::class, 'show']);
 
 Route::get('/contact', [ContactController::class, 'index']);

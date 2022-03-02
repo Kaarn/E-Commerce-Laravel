@@ -42,14 +42,14 @@
                 </div>
                 <img class="img-fluid border-0" src="{{ $product->cover }}" alt="Card image cap">
                 <div class="card-body">
-                    <h4 class="card-title text-center"><a href="product" title="View Product">{{ $product->name }}</a></h4>
+                    <h4 class="card-title text-center"><a href="/produits/{{ $product->id }}" title="View Product">{{ $product->name }}</a></h4>
                     <p class="card-text">{{ $product->description }}</p>
                     <div class="row">
                         <div class="col">
                             <p class="btn btn-danger w-100">{{ $product->price }} &euro;</p>
                         </div>
                         <div class="col">
-                            <a href="product" class="btn btn-success w-100">Voir</a>
+                            <a href="/produits/{{ $product->id }}}" class="btn btn-success w-100">Voir</a>
                         </div>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                             <div class="card">
                                 <img class="card-img-top" src="{{ $product->cover }}" alt="Card image cap">
                                 <div class="card-body">
-                                    <h4 class="card-title"><a href="product" title="View Product">{{ $product->name }}</a></h4>
+                                    <h4 class="card-title"><a href="/produits/{{ $product->id }}" title="View Product">{{ $product->name }}</a></h4>
                                     <p class="card-text">{{ $product->description }}</p>
                                     <div class="row">
                                         <div class="col">

@@ -56,7 +56,7 @@
             <div class="card bg-light mb-3">
                 <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Catégories</div>
                 <ul class="list-group category_block">
-                    <li class="list-group-item"><a href="/categories/category">Catégories</a></li>
+                    <li class="list-group-item"><a href="category">Catégories</a></li>
                 </ul>
             </div>
 
@@ -103,6 +103,7 @@
                 @endforeach
 
                 {{ $products->links() }}
+                
                 
             </div>
         </div>
