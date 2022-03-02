@@ -4,7 +4,7 @@
 
 <section class="jumbotron text-center">
     <div class="container">
-        <h1 class="jumbotron-heading">Amazon</h1>
+        <h1 class="jumbotron-heading">{{ config('app.name') }}</h1>
         <p class="lead text-muted mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum delectus ad quae cumque voluptates dolorum, neque eveniet, placeat obcaecati magnam vel fugit nulla autem, mollitia consequuntur praesentium sit? Veniam, facere.</p>
     </div>
 </section>
@@ -40,13 +40,13 @@
                 <div class="card-header bg-success text-white text-uppercase">
                     <i class="fa fa-heart"></i> Coup de coeur
                 </div>
-                <img class="img-fluid border-0" src="{{ $bestproduct->cover }}" alt="Card image cap">
+                <img class="img-fluid border-0" src="{{ $product->cover }}" alt="Card image cap">
                 <div class="card-body">
-                    <h4 class="card-title text-center"><a href="product" title="View Product">{{ $bestproduct->name }}</a></h4>
-                    <p class="card-text">{{ $bestproduct->description }}</p>
+                    <h4 class="card-title text-center"><a href="product" title="View Product">{{ $product->name }}</a></h4>
+                    <p class="card-text">{{ $product->description }}</p>
                     <div class="row">
                         <div class="col">
-                            <p class="btn btn-danger w-100">{{ $bestproduct->price }} &euro;</p>
+                            <p class="btn btn-danger w-100">{{ $product->price }} &euro;</p>
                         </div>
                         <div class="col">
                             <a href="product" class="btn btn-success w-100">Voir</a>

@@ -56,7 +56,7 @@
             <div class="card bg-light mb-3">
                 <div class="card-header bg-primary text-white text-uppercase"><i class="fa fa-list"></i> Catégories</div>
                 <ul class="list-group category_block">
-                    <li class="list-group-item"><a href="category">Catégories</a></li>
+                    <li class="list-group-item"><a href="/categories/category">Catégories</a></li>
                 </ul>
             </div>
 
@@ -64,13 +64,13 @@
             <div class="card bg-light mb-3">
                 <div class="card-header bg-success text-white text-uppercase">Dernier produit</div>
                 <div class="card-body">
-                    <img class="img-fluid" src="{{ $lastproduct->cover }}" />
-                    <h5 class="card-title mt-3">{{ $lastproduct->name }}</h5>
-                    <p class="card-text">{{ $lastproduct->description }}</p>
+                    <img class="img-fluid" src="{{ $lastProduct->cover }}" />
+                    <h5 class="card-title mt-3">{{ $lastProduct->name }}</h5>
+                    <p class="card-text">{{ $lastProduct->description }}</p>
 
                     <div class="row">
                         <div class="col">
-                            <p class="btn btn-danger w-100">{{ $lastproduct->price }} &euro;</p>
+                            <p class="btn btn-danger w-100">{{ $lastProduct->price }} &euro;</p>
                         </div>
                         <div class="col">
                             <a href="products/product" class="btn btn-success w-100">Voir</a>
@@ -104,24 +104,6 @@
 
                 {{ $products->links() }}
                 
-                <!-- </div>
-                <div class="col-12">
-                    <nav aria-label="...">
-                        <ul class="pagination">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1">Précédent</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item active">
-                                <a class="page-link" href="#">2</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">Suivant</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div> -->
             </div>
         </div>
 

@@ -12,11 +12,12 @@ class ProductController extends Controller
     public function index()
     {
         return view('produits.products', [
-            'products' => Product::latest()->paginate(4),
-            'lastproduct' => Product::latest()->first(),
+            'products' => Product::latest()->paginate(6),
+            'lastProduct' => Product::latest()->first(),
+            'categories' => Category::all(),
         ]);
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -46,7 +47,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('produits/product', [
+        return view('produits.product', [
             'product' => $product
         ]);
     }
@@ -87,7 +88,7 @@ class ProductController extends Controller
 
     public function latest() 
     {
-        return view('index', [
+        return view('/', [
             'products' => Product::latest(3),
         ]);
     }

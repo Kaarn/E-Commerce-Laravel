@@ -24,11 +24,11 @@ class DatabaseSeeder extends Seeder
         for ($i=0; $i < 10; $i++)
         DB::table('products')->insert([
             'name' => $this->faker->word(4),
-            'description' => $this->faker->text(300),
+            'description' => $this->faker->text(150),
             'price' => rand(1, 2000),
             'slug' => $this->faker->slug(1),
             'favorite' => $this->faker->boolean(),
-            'cover' => 'https://e-leclerc.scene7.com/is/image/gtinternet/0194252165867_1?op_sharpen=1&resmode=bilin&fmt=pjpeg&qlt=85&wid=450&fit=fit,1&hei=450',
+            'cover' => $this->faker->imageUrl(),
             'created_at' => now(),
             'updated_at' => now(),
         ]);
